@@ -11,12 +11,6 @@ mainloop:
 ;This is where you do your mega-amazing tiny program.
 ;Write 8-bit values to A000:0000 to draw some pixels.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        mov     ax, di		; get screen position into AX
-        mov     bx, 320		; get screen width into BX
-        div     bx			; divide, to get row and column
-        xor     ax, dx		; the famous XOR pattern
-        and     al, 32+8	; a more interesting variation of it
-        stosb			    ; finally, draw to the screen
 
         ;Check for user wanting to leave by pressing ESC
         in      al,60h          ;read whatever is at keyboard port; looking for ESC which is #1
